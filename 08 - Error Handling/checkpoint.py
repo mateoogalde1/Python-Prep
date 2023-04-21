@@ -1,4 +1,4 @@
-# Importante: No modificar ni el nombre ni los argumetos que reciben las funciones, sólo deben escribir
+# Importante: No modificar ni el nombre ni los argumentos que reciben las funciones, sólo deben escribir
 # código dentro de las funciones ya definidas.
 
 def Factorial(numero):
@@ -12,11 +12,18 @@ def Factorial(numero):
         Factorial(-2) debe retornar nulo
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    if not isinstance(numero, int) or numero < 1:
+        return None
+    
+    fact = 1
+    for i in range(1, numero+1):
+        fact *= i
+    
+    return fact
 
 def EsPrimo(valor):
     '''
-    Esta función devuelve el valor booleano True si el número reibido como parámetro es primo, de lo 
+    Esta función devuelve el valor booleano True si el número recibido como parámetro es primo, de lo 
     contrario devuelve False..
     En caso de que el parámetro no sea de tipo entero debe retornar nulo.
     Recibe un argumento:
@@ -26,7 +33,17 @@ def EsPrimo(valor):
         EsPrimo(8) debe retornar False
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    if not isinstance(valor, int):
+        return None
+    
+    if valor < 2:
+        return False
+    
+    for i in range(2, valor):
+        if valor % i == 0:
+            return False
+    
+    return True
     
 def ClaseAnimal(especie, color):
     '''
@@ -42,9 +59,19 @@ def ClaseAnimal(especie, color):
         color: Dato que se asignará al atributo Color del objeto de la clase Animal
     Ej:
         a = ClaseAnimal('perro','blanco')
-        a.CumpliAnios() -> debe devolver 1
-        a.CumpliAnios() -> debe devolver 2
-        a.CumpliAnios() -> debe devolver 3
+        a.CumplirAnios() -> debe devolver 1
+        a.CumplirAnios() -> debe devolver 2
+        a.CumplirAnios() -> debe devolver 3
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    class Animal:
+        def __init__(self, especie, color):
+            self.Edad = 0
+            self.Especie = especie
+            self.Color = color
+
+        def CumplirAnios(self):
+            self.Edad += 1
+            return self.Edad
+    return Animal (especie, color)
+    

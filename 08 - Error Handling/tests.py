@@ -30,7 +30,7 @@ class PruebaHenryChallenge(unittest.TestCase):
       self.assertEqual(valor_test, valor_esperado)
 
     def test_EsPrimo_03(self):
-      valor_test = ch.EsPrimo('parametro incorrecto')
+      valor_test = ch.EsPrimo('parámetro incorrecto')
       valor_esperado = None
       self.assertEqual(valor_test, valor_esperado)
 
